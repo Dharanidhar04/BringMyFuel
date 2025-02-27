@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bring My Fuel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="fuelicon.png" alt="Logo">
+            <span>BRING MY FUEL</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#feedback">FEEDBACK</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <main>
+            <div class="content">
+                <h1>Hello...<br>Welcome</h1>
+                <button class="login-btn">LOGIN</button>
+            </div>
+            <div class="image-section">
+                <img src="1stimagelowfuel.webp" alt="Out of Fuel?">
+                <p>OUT OF FUEL ? ⛽</p>
+            </div>
+        </main>
+    </section>
+
+    <section id="about">
+        <div class="about-content">
+            <div class="text">
+                <h2>No more Worries<br>Bring my Fuel<br>is here to help you</h2>
+            </div>
+            <div class="image-section">
+                <img src="2ndimage.webp" alt="Stuck on the Road?">
+                <p>STUCK ON<br>THE ROAD ? 🛣️</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="services-content">
+            <div class="service-item">
+                <div class="text">
+                    <h2>We deliver top-quality services, supplying fuel for vehicles ranging from bikes to trucks.</h2>
+                    <button class="book-btn">Book My Fuel</button>
+                </div>
+                <div class="image-section">
+                    <img src="3rdimage.webp" alt="Booking Fuel">
+                    <p>WHY TO RUSH OUT ? 🚏</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="text">
+                    <h2>Just Book fuel from anywhere, we come to your location</h2>
+                </div>
+                <div class="image-section">
+                    <img src="4thimage.webp" alt="Rider Arriving">
+                    <p>OUR RIDER IS HERE 🏍️</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback">
+        <div class="feedback-content">
+            <div class="text">
+                <h2>Our Beloved Customers' Feedback</h2>
+            </div>
+            <div class="image-section">
+                <img src="5thimage.webp" alt="Stuck on the Road?">
+                <p>DELIVERS FUEL ON TIME</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-content">
+            <div class="text">
+                <h2>Your convenience is our priority—we are here to assist you with orders and information.</h2>
+                <button class="contact-btn">CONTACT US</button>
+            </div>
+            <div class="image-section">
+                <img src="6thimage.webp" alt="Stuck on the Road?">
+                <p>FEEL FREE TO CONTACT US</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Created by Dharanidhar Reddy Bannuri. All Rights Reserved.</p>
+        <p>Check out my work on 
+            <a href="https://www.behance.net/bannuridharani" target="_blank">Behance</a> and 
+            <a href="https://github.com/dharanidhar04" target="_blank">GitHub</a>.
+        </p>
+        <p>For inquiries, reach me at 
+            <a href="mailto:bannuri2002@gmail.com">bannuri2002@gmail.com</a>.
+        </p>
+    </footer>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetSection = document.querySelector(this.getAttribute("href"));
+            targetSection.scrollIntoView({ behavior: "smooth" });
+        });
+    });
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+        document.querySelectorAll("section").forEach(section => {
+            const sectionTop = section.offsetTop - 50;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").substring(1) === current) {
+                link.classList.add("active");
+            }
+        });
+    });
+});
+
+    </script>
+
+</body>
+</html>
